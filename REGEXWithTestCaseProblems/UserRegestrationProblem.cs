@@ -12,16 +12,15 @@ namespace REGEXWithTestCaseProblems
     public class UserRegestrationProblem
     {
         public string Password;
-        public static string Numeric= @"^(?=.*[0-9])[A-Za-z0-9]{8,}$";
-        // this pattern used for validate the Password
+        public static string SpecialChar = @"^(?=.*[@$!%*#?&])[a-zA-Z0-9@$!%*#?&]{8,}$"; // this pattern used for validate the Password
         public UserRegestrationProblem(string password) // constructer
         {
             this.Password = password;
         }
         public string ValidatePassword() // this method used for the validating password with minimum eight characters
-                                         // with atleast one numeric value
+                                         // with atleast one Special Character
         {
-            if (Regex.IsMatch(Password,Numeric))
+            if (Regex.IsMatch(Password,SpecialChar))
             {
                 return "Valid";
             }
