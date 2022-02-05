@@ -11,22 +11,22 @@ namespace REGEXWithTestCaseProblems
 /// </summary>
     public class UserRegestrationProblem
     {
-        public string Mobile;
-        public static string MobileNum = @"^([\+][0-9]{2}\s*[0-9]{10})$";
+        public string Password;
+        public static string PasswordPattern = @"^[A-Za-z0-9]{8,}$";
         // this pattern used for validate the Mobile Number
-        public UserRegestrationProblem(string mobileNumber) // constructer
+        public UserRegestrationProblem(string password) // constructer
         {
-            this.Mobile = mobileNumber;
+            this.Password = password;
         }
-        public string ValidateMobileNum() // this method used for the validating mobile number
+        public string ValidatePassword() // this method used for the validating password with minimum eight characters 
         {
-            if (Regex.IsMatch(Mobile, MobileNum))
+            if (Regex.IsMatch(Password, PasswordPattern))
             {
                 return "Valid";
             }
             else
             {
-                return "NotValid";
+                return "InValid";
             }
             //The End
         }
