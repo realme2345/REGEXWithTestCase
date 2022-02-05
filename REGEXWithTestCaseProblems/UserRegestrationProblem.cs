@@ -6,26 +6,26 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace REGEXWithTestCaseProblems
-{
+{/// <summary>
+/// User Registretion
+/// </summary>
     public class UserRegestrationProblem
     {
-        public string Email;
-        public static string Pattern = @"^([A-Za-z0-9]*\.[A-Za-z0-9]*)@([A-Za-z0-9]*)((\.(\w){2,3})+)$"; // this pattern used for validate the Email
-        public UserRegestrationProblem(string Email) // this method is used for validating Email
+        public string Mobile;
+        public static string MobileNum = @"^([\+][0-9]{2}\s*[0-9]{10})$";
+        // this pattern used for validate the Mobile Number
+        public UserRegestrationProblem(string mobileNumber) // constructer
         {
-            this.Email = Email;
+            this.Mobile = mobileNumber;
         }
-        public string ValidatingEmail()
-        { 
-        
-            if (Regex.IsMatch(Email,Pattern))
+        public string ValidateMobileNum() // this method used for the validating mobile number
+        {
+            if (Regex.IsMatch(Mobile, MobileNum))
             {
-               // Console.WriteLine("{0} is valid", Email);
                 return "Valid";
             }
             else
             {
-               //Console.WriteLine("{0} is not valid", Email);
                 return "NotValid";
             }
             //The End
