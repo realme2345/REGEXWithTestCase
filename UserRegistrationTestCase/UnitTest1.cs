@@ -15,7 +15,7 @@ namespace UserRegistrationTestCase
             string expected = "Valid";
             UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem(lastName);//creating a object for a class
             ///Act
-            string actual = userRegestrationProblem.ValidatingFirstName();//hear we check the mood of user is happy or sad
+            string actual = userRegestrationProblem.ValidatingLastName();//hear we check for Validating Last name
             ///Assert
             Assert.AreEqual(expected, actual);
         }

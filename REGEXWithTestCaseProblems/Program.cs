@@ -13,7 +13,7 @@ namespace REGEXWithTestCaseProblems
             Console.WriteLine("Welcome to REGEX with test case problems");
             UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem("Raja");
             //creating a object for a class
-            userRegestrationProblem.ValidatingFirstName();
+            userRegestrationProblem.ValidatingLastName();
 
         }
     }
