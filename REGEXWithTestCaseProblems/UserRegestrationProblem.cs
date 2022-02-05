@@ -12,15 +12,16 @@ namespace REGEXWithTestCaseProblems
     public class UserRegestrationProblem
     {
         public string Password;
-        public static string PasswordPattern = @"^[A-Za-z0-9]{8,}$";
-        // this pattern used for validate the Mobile Number
+        public static string UpperCase = @"^(?=.*[A-Z])[A-Za-z0-9]{8,}$";
+        // this pattern used for validate the Password
         public UserRegestrationProblem(string password) // constructer
         {
             this.Password = password;
         }
-        public string ValidatePassword() // this method used for the validating password with minimum eight characters 
+        public string ValidatePassword() // this method used for the validating password with minimum eight characters
+                                         // with atleast one upper case
         {
-            if (Regex.IsMatch(Password, PasswordPattern))
+            if (Regex.IsMatch(Password,UpperCase))
             {
                 return "Valid";
             }

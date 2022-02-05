@@ -11,7 +11,7 @@ namespace UserRegistrationTestCase
         public void TestCaseMethod()
         {
             ///Arrange
-            string mobileNumber = "rajakongara";
+            string mobileNumber = "Rajakongara";
             string expected = "Valid";
             UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem(mobileNumber);//creating a object for a class
             ///Act
