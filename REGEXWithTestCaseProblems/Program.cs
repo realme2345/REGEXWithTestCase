@@ -11,7 +11,7 @@ namespace REGEXWithTestCaseProblems
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to REGEX with test case problems");
-            UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem("Rajakongara");
+            UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem("Rajakongara1234");
             //creating a object for a class
             userRegestrationProblem.ValidatePassword();
 
