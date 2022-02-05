@@ -9,23 +9,23 @@ namespace REGEXWithTestCaseProblems
 {
     public class UserRegestrationProblem
     {
-        public string LastName;
-        public static string Pattern = "^[A-Z][A-Z a-z]{3,}$"; // this pattern used for validate the name
-        public UserRegestrationProblem(string lastName) // this method is used for validating first name
+        public string Email;
+        public static string Pattern = @"^([A-Za-z0-9]*\.[A-Za-z0-9]*)@([A-Za-z0-9]*)((\.(\w){2,3})+)$"; // this pattern used for validate the Email
+        public UserRegestrationProblem(string Email) // this method is used for validating Email
         {
-            this.LastName = lastName;
+            this.Email = Email;
         }
-        public string ValidatingFirstName()
+        public string ValidatingEmail()
         { 
         
-            if (Regex.IsMatch(LastName,Pattern))
+            if (Regex.IsMatch(Email,Pattern))
             {
-                //Console.WriteLine("{0} is valid", FirstName);
+               // Console.WriteLine("{0} is valid", Email);
                 return "Valid";
             }
             else
             {
-               // Console.WriteLine("{0} is not valid", FirstName);
+               //Console.WriteLine("{0} is not valid", Email);
                 return "NotValid";
             }
             //The End

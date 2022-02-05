@@ -11,11 +11,11 @@ namespace UserRegistrationTestCase
         public void TestCaseMethod()
         {
             ///Arrange
-            string lastName = "Raja";
+            string Email = "raja.kongara@gmail.com";
             string expected = "Valid";
-            UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem(lastName);//creating a object for a class
+            UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem(Email);//creating a object for a class
             ///Act
-            string actual = userRegestrationProblem.ValidatingFirstName();//hear we check the mood of user is happy or sad
+            string actual = userRegestrationProblem.ValidatingEmail();//hear we check validating Email
             ///Assert
             Assert.AreEqual(expected, actual);
         }
