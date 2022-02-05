@@ -15,7 +15,7 @@ namespace UserRegistrationTestCase
             string expected = "Valid";
             UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem(mobileNumber);//creating a object for a class
             ///Act
-            string actual = userRegestrationProblem.ValidatePassword();//hear we check validating Email
+            string actual = userRegestrationProblem.ValidatePassword();//hear we check validating password with Atleast one upper case
             ///Assert
             Assert.AreEqual(expected, actual);
         }
