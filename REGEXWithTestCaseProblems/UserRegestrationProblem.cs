@@ -13,7 +13,7 @@ namespace REGEXWithTestCaseProblems
     {
         public string Password;
         public static string PasswordPattern = @"^[A-Za-z0-9]{8,}$";
-        // this pattern used for validate the Mobile Number
+        // this pattern used for validate the password
         public UserRegestrationProblem(string password) // constructer
         {
             this.Password = password;
