@@ -11,24 +11,38 @@ namespace REGEXWithTestCaseProblems
 /// </summary>
     public class UserRegestrationProblem
     {
-        public string Password;
-        public static string SpecialChar = @"^(?=.*[@$!%*#?&])[a-zA-Z0-9@$!%*#?&]{8,}$"; // this pattern used for validate the Password
-        public UserRegestrationProblem(string password) // constructer
+        public static string FirstName { get; set; }
+        public static string LastName { get; set;}
+        public static string Email { get; set; } 
+        public static  string Mobile { get; set; }
+        public static string Password { get; set; }
+        //Assigning the values
+        public UserRegestrationProblem(string firstName,string lastName,string email,string mobile,string password) // constructer
         {
-            this.Password = password;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Mobile = mobile;
+            Password = password;
         }
-        public string ValidatePassword() // this method used for the validating password with minimum eight characters
-                                         // with atleast one Special Character
+        //Declring the pattern
+        public static string FirstNamePattern = "^[A-Z][A-Z a-z]{3,}$";
+        public static string LastNamePattern = "^[A-Z][A-Z a-z]{3,}$";
+        public static string EmailAddressPattern = @"^([A-Za-z0-9]*\.[A-Za-z0-9]*)@([A-Za-z0-9]*)((\.(\w){2,3}))$";
+        public static string MobileNumPattern = @"^([\+][0-9]{2}\s*[0-9]{10})$";
+        public static string PasswordPattern = @"^(?=.*[0-9])(?=.*[A-Z])(?=.*[@$!%*#?&])([A-Za-z0-9@$!%*#?&]){8,}$";
+        public string ValidateNames()//this method is used for the validating the user names
         {
-            if (Regex.IsMatch(Password,SpecialChar))
+            if (Regex.IsMatch(FirstName, FirstNamePattern) && (Regex.IsMatch(LastName, LastNamePattern)) && (Regex.IsMatch(Email, EmailAddressPattern)) && (Regex.IsMatch(Mobile, MobileNumPattern)) && (Regex.IsMatch(Password, PasswordPattern)))
             {
-                return "Valid";
+                //Console.WriteLine("Happy");
+                return "Happy";
             }
             else
             {
-                return "InValid";
+                //Console.WriteLine("Sad");
+                return "Sad";
             }
-            //The End
         }
     }
 }
