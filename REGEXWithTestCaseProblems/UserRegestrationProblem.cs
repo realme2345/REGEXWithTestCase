@@ -17,13 +17,13 @@ namespace REGEXWithTestCaseProblems
         public static  string Mobile { get; set; }
         public static string Password { get; set; }
         //Assigning the values
-        public UserRegestrationProblem(string firstName,string lastName,string email,string mobile,string password) // constructer
+        public UserRegestrationProblem() // constructer
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Email = email;
-            Mobile = mobile;
-            Password = password;
+            FirstName = "Raja";
+            LastName = "Konagar";
+            Email = "Konagara.raja@gmail.com";
+            Mobile = "+91 9133139939";
+            Password = "Kongarara@1234";
         }
         //Declring the pattern
         public static string FirstNamePattern = "^[A-Z][A-Z a-z]{3,}$";

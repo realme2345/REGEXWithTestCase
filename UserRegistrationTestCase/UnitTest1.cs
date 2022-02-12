@@ -12,7 +12,7 @@ namespace UserRegistrationTestCase
         {
             // Arrange
             string expected = "Happy";
-            UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem("Raja", "Kongara", "Kongara.raja@gmail.com", "+91 9123234456", "konNaa@143");
+            UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem();
             //creating a object for a class
             //Act
             string actual = userRegestrationProblem.ValidateNames(); //hear we check validating password with atleast special character
@@ -24,7 +24,7 @@ namespace UserRegistrationTestCase
         {
             // Arrange
             string expected = "Sad";
-            UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem("Raja", "ongara", "Kongara.raja@gmail.com", "+91 9123234456", "konNaa@143");
+            UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem();
             //creating a object for a class
             //Act
             string actual = userRegestrationProblem.ValidateNames(); //hear we check validating password with atleast special character
