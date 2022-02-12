@@ -12,12 +12,12 @@ namespace REGEXWithTestCaseProblems
     public class UserRegestrationProblem
     {
         public static string FirstName { get; set; }
-        public static string LastName { get; set;}
-        public static string Email { get; set; } 
-        public static  string Mobile { get; set; }
+        public static string LastName { get; set; }
+        public static string Email { get; set; }
+        public static string Mobile { get; set; }
         public static string Password { get; set; }
         // Assigning the values
-        public UserRegestrationProblem(string firstName,string lastName,string email,string mobile,string password) // constructer
+        public UserRegestrationProblem(string firstName, string lastName, string email, string mobile, string password) // constructer
         {
             FirstName = firstName;
             LastName = lastName;
@@ -33,16 +33,43 @@ namespace REGEXWithTestCaseProblems
         public static string PasswordPattern = @"^(?=.*[0-9])(?=.*[A-Z])(?=.*[@$!%*#?&])([A-Za-z0-9@$!%*#?&]){8,}$";
         public string ValidateNames()//this method is used for the validating the user names
         {
-            if (Regex.IsMatch(FirstName, FirstNamePattern) && (Regex.IsMatch(LastName, LastNamePattern)) && (Regex.IsMatch(Email, EmailAddressPattern)) && (Regex.IsMatch(Mobile, MobileNumPattern)) && (Regex.IsMatch(Password, PasswordPattern)))
+            try
             {
-                //Console.WriteLine("Happy");
-                return "Happy";
+                if (Regex.IsMatch(FirstName, FirstNamePattern) && (Regex.IsMatch(LastName, LastNamePattern)) && (Regex.IsMatch(Email, EmailAddressPattern)) && (Regex.IsMatch(Mobile, MobileNumPattern)) && (Regex.IsMatch(Password, PasswordPattern)))
+                {
+                    return "Happy";
+                }
+                else if (!Regex.IsMatch(FirstName,FirstNamePattern))
+                {
+                    throw new CustomException(CustomException.ExceptionType.INVALID_FIRST_NAME, "Invalid First Name");
+                }
+                else if(!Regex.IsMatch(LastName,LastNamePattern))
+                {
+                    throw new CustomException(CustomException.ExceptionType.INVALID_LaST_NAME, "Invalid last Name");
+                }
+                else if (!Regex.IsMatch(Email, EmailAddressPattern))
+                {
+                    throw new CustomException(CustomException.ExceptionType.INVALID_EMAIL, "Invalid Email");
+                }
+                else if (!Regex.IsMatch(Mobile, MobileNumPattern))
+                {
+                    throw new CustomException(CustomException.ExceptionType.INVALID_MOBILE, "Invalid Mobile");
+                }
+                else if (!Regex.IsMatch(Password, PasswordPattern))
+                {
+                    throw new CustomException(CustomException.ExceptionType.INVALID_PASSWORD, "Invalid Password");
+                }
+                else
+                {
+                    return "Sad";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                //Console.WriteLine("Sad"); 
-                return "Sad";
+                return ex.Message;
+                //Console.WriteLine( ex.Message);
             }
+            
         }
     }
 }
