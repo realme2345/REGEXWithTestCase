@@ -16,7 +16,7 @@ namespace REGEXWithTestCaseProblems
         public static string Email { get; set; } 
         public static  string Mobile { get; set; }
         public static string Password { get; set; }
-        //Assigning the values
+        // Assigning the values
         public UserRegestrationProblem(string firstName,string lastName,string email,string mobile,string password) // constructer
         {
             FirstName = firstName;

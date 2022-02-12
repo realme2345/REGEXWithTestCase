@@ -10,7 +10,7 @@ namespace UserRegistrationTestCase
         [TestMethod]
         public void TestCaseHappyMethod()
         {
-            // Arrange
+            //Arrange
             string expected = "Happy";
             UserRegestrationProblem userRegestrationProblem = new UserRegestrationProblem("Raja", "Kongara", "Kongara.raja@gmail.com", "+91 9123234456", "konNaa@143");
             //creating a object for a class
